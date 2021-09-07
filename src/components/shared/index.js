@@ -1,0 +1,9 @@
+export { default as Header } from "./Header/Header";
+export { default as Footer } from "./Footer/Footer";
+export { default as Banner } from "./Banner/Banner";
+export { default as Card } from "./Card/Card";
+export { default as Dot } from "./Dot/Dot";
+export { default as Pagination } from "./Pagination/Pagination";
+export { default as Profile } from "./Profile/Profile";
+export { default as Category } from "./Category/Category";
+export { default as Seo } from "./SEO/Seo";

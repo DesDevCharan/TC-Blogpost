@@ -1,0 +1,102 @@
+{
+  "name": "tc-posts",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Charanbabu Karnam",
+    "email": "charanbabukarnam@gmail.com"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.1.2",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "timeago.js": "^4.0.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:dev": "env-cmd -f .env.development npm run build",
+    "build:staging": "env-cmd -f .env.staging npm run build",
+    "build:production": "env-cmd -f .env.production npm run build",
+    "\n ######################  Automation Tools  ######################": "",
+    "lint-staged": "lint-staged",
+    "linters": "npm-run-all -p js-lint sass-lint adviser-dev",
+    "adviser-dev": "adviser --tags dev --verbose",
+    "adviser-ci": "adviser --tags stage --verbose --quiet",
+    "js-lint": "eslint \"./src/**/*.js\" -c ./.eslintrc.json --quiet --ignore-pattern .gitignore --ignore-pattern *.stories.js",
+    "sass-lint": "stylelint \"./src/**/*.scss\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"Pre-commit checks...\" && lint-staged",
+      "pre-push": "echo \"Pre-push checks...\" && npm run linters",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": "11.15.0",
+    "npm": "6.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "^2.3.2",
+    "env-cmd": "^10.1.0",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "adviser": "^0.7.5",
+    "adviser-plugin-dependencies": "^0.4.2",
+    "adviser-plugin-lighthouse": "^1.0.1",
+    "adviser-plugin-webhint": "^1.0.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-flowtype": "^5.7.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.2.5",
+    "redux-devtools-extension": "^2.13.9",
+    "sass-lint": "^1.13.1",
+    "shell-quote": "^1.7.2",
+    "stylelint": "^13.13.1"
+  }
+}
